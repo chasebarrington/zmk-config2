@@ -5,6 +5,14 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    behaviors {
+        rot_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -25,7 +33,7 @@
            &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE  &kp RALT  &mo 1   &kp RCTRL  &kp LEFT   &kp DOWN  &kp RIGHT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise {
@@ -37,7 +45,7 @@
             &bt BT_PRV    &bt BT_NXT    &trans      &trans  &trans  &trans  &trans  &bt BT_CLR  &trans   &bl BL_DEC
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
