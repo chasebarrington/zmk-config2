@@ -33,7 +33,7 @@
            &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE  &kp RALT  &mo 1   &kp RCTRL  &kp LEFT   &kp DOWN  &kp RIGHT
             >;
 
-            sensor-bindings = <&rot_kp K_VOLUME_UP K_VOLUME_DOWN>;
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise {
